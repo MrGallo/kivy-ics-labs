@@ -1,2 +1,2 @@
-# kivy-ics-labs
+# Kivy Labs
  
