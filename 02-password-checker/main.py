@@ -45,13 +45,27 @@ class MainContainer(BoxLayout):
         if len(password) >= 8:
             score += 10
 
+        has_lower = False
+        has_upper = False
+        has_number = False
+        has_symbol = False
+
         for c in password:
             # ASCII values
             # lower: 97-122
             # upper: 65-90
             # numbers: 48-57
             # symbols: 33-64, 91-96, 123, 126
-            print(c, ord(c))
+
+            ascii_value = ord(c)
+            print(c, ascii_value)
+
+            if ascii_value >= 97 and ascii_value <= 122:
+                print("lower!")
+                has_lower = True
+        
+        print(f"{has_lower = }")
+
         
         return score
 
