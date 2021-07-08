@@ -28,7 +28,7 @@ class MainContainer(BoxLayout):
     def calc_password_score(self, password):
         """
         The password will get 10pts for each criteria present:
-        - length > 8
+        - length >= 8
         - contains lower-case letters
         - contains upper-case letters
         - contains numbers
@@ -37,7 +37,23 @@ class MainContainer(BoxLayout):
         A password cannot contain a space or be less than 6 characters. 
         If so, return -1 (invalid).
         """
-        return 0
+        score = 0
+
+        if len(password) < 6 or " " in password:
+            return -1
+
+        if len(password) >= 8:
+            score += 10
+
+        for c in password:
+            # ASCII values
+            # lower: 97-122
+            # upper: 65-90
+            # numbers: 48-57
+            # symbols: 33-64, 91-96, 123, 126
+            print(c, ord(c))
+        
+        return score
 
 
 class PasswordCheckerApp(App):
