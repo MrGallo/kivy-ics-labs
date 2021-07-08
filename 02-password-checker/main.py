@@ -4,7 +4,7 @@ from kivy.properties import StringProperty
 
 
 class MainContainer(BoxLayout):
-    pass
+    status_text = StringProperty("Enter a password")
 
 
 class PasswordCheckerApp(App):
