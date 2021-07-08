@@ -3,8 +3,16 @@ from kivy.uix.relativelayout import RelativeLayout
 from kivy.properties import StringProperty
 
 
+INFORMATION = """A secure password should...
+- Criteria 1
+- Criteria 2
+- Criteria 3
+- Etc..
+"""
+
 class MainContainer(RelativeLayout):
     status_text = StringProperty("Enter a password")
+    information_text = StringProperty(INFORMATION)
 
     def handle_check_button_press(self, password):
         score = self.calc_password_score(password)
