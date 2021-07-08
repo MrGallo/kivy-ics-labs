@@ -13,7 +13,14 @@ class MainContainer(BoxLayout):
         score = self.calc_password_score(password)
         print(f"Score: {score}")
 
-        self.status_text = "Weak"
+        if score >= 40:
+            self.status_text = "Strong"
+        elif score >= 20:
+            self.status_text = "Moderate"
+        elif score >= 0:
+            self.status_text = "Weak"
+        else:
+            self.status_text = "Invalid"
 
     def handle_info_button_press(self):
         print("Info button was pressed!")
