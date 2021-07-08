@@ -1,18 +1,10 @@
 from kivy.app import App
-from kivy.uix.relativelayout import RelativeLayout
+from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import StringProperty
 
 
-INFORMATION = """A secure password should...
-- Criteria 1
-- Criteria 2
-- Criteria 3
-- Etc..
-"""
-
-class MainContainer(RelativeLayout):
+class MainContainer(BoxLayout):
     status_text = StringProperty("Enter a password")
-    information_text = StringProperty(INFORMATION)
 
     def handle_check_button_press(self, password):
         score = self.calc_password_score(password)
@@ -25,9 +17,6 @@ class MainContainer(RelativeLayout):
         else:
             self.status_text = "Invalid"
 
-    def handle_info_button_press(self):
-        print("Info button was pressed!")
-    
     def calc_password_score(self, password):
         """
         The password will get 10pts for each criteria present:
