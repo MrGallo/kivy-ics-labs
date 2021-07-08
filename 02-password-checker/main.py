@@ -55,16 +55,26 @@ class MainContainer(BoxLayout):
             # lower: 97-122
             # upper: 65-90
             # numbers: 48-57
-            # symbols: 33-64, 91-96, 123, 126
+            # symbols: 33-64, 91-96, 123-126
 
             ascii_value = ord(c)
             print(c, ascii_value)
 
             if ascii_value >= 97 and ascii_value <= 122:
-                print("lower!")
                 has_lower = True
+            elif ascii_value >= 65 and ascii_value <= 90:
+                has_upper = True
+            elif ascii_value >= 48 and ascii_value <= 57:
+                has_number = True
+            elif (ascii_value >= 33 and ascii_value <= 64 or
+                  ascii_value >= 91 and ascii_value <= 96 or
+                  ascii_value >= 123 and ascii_value <= 126):
+                has_symbol = True
         
         print(f"{has_lower = }")
+        print(f"{has_upper = }")
+        print(f"{has_number = }")
+        print(f"{has_symbol = }")
 
         
         return score
