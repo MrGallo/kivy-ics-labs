@@ -1,9 +1,9 @@
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.relativelayout import RelativeLayout
 from kivy.properties import StringProperty
 
 
-class MainContainer(BoxLayout):
+class MainContainer(RelativeLayout):
     status_text = StringProperty("Enter a password")
 
     def handle_check_button_press(self, password):
