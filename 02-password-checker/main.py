@@ -6,8 +6,9 @@ from kivy.properties import StringProperty
 class MainContainer(BoxLayout):
     status_text = StringProperty("Enter a password")
 
-    def handle_check_button_press(self):
+    def handle_check_button_press(self, password):
         print("Check button was pressed!")
+        print(f"Password: {password}")
 
     def handle_info_button_press(self):
         print("Info button was pressed!")
