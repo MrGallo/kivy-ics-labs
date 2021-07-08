@@ -7,12 +7,7 @@ class MainContainer(BoxLayout):
     status_text = StringProperty("Enter a password")
 
     def handle_check_button_press(self, password):
-        print("Check button was pressed!")
-        print(f"Password: {password}")
-
         score = self.calc_password_score(password)
-        print(f"Score: {score}")
-
         if score >= 40:
             self.status_text = "Strong"
         elif score >= 20:
