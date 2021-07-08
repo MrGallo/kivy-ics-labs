@@ -9,6 +9,9 @@ class MainContainer(BoxLayout):
     def handle_check_button_press(self):
         print("Check button was pressed!")
 
+    def handle_info_button_press(self):
+        print("Info button was pressed!")
+
 
 class PasswordCheckerApp(App):
     pass
