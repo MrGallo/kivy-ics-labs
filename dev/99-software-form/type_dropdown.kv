@@ -1,0 +1,18 @@
+TypeDropDown:
+
+<IconListItem>
+
+    IconLeftWidget:
+        icon: root.icon
+
+
+<TypeDropDown>:
+    MDLabel:
+        text: "Hello"
+    MDDropDownItem:
+        id: field
+        pos_hint: {'center_x': .5, 'center_y': .6}
+        size_hint_x: None
+        width: "200dp"
+        text: "Open Menu"
+        on_release: root.click(self)

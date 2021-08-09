@@ -1,0 +1,58 @@
+MainContainer:
+
+
+<MainContainer>:
+    type_dropdown: type_dropdown
+    orientation: "vertical"
+    padding: "20dp"
+    MDLabel:
+        id: blah
+        text: "New Software Product"
+        halign: "center"
+        font_style: "H3"
+    MDTextField:
+        hint_text: "Product name"
+    MDTextField:
+        hint_text: "Developer"
+    MDTextField:
+        hint_text: "Price"
+    BoxLayout:
+        orientation: "vertical"
+        MDLabel:
+            text: "OS Compatibility"
+        BoxLayout:
+            MDCheckbox:
+                size_hint: None, None
+                size: "48dp", "48dp"
+                pos_hint: {'center_x': .5, 'center_y': .5}
+            MDLabel:
+                text: "Windows"   
+        BoxLayout:
+            MDCheckbox:
+                size_hint: None, None
+                size: "48dp", "48dp"
+                pos_hint: {'center_x': .5, 'center_y': .5}
+            MDLabel:
+                text: "Mac"   
+        BoxLayout:
+            MDCheckbox:
+                size_hint: None, None
+                size: "48dp", "48dp"
+                pos_hint: {'center_x': .5, 'center_y': .5}
+            MDLabel:
+                text: "Linux"
+    BoxLayout:
+        orientation: "vertical"
+        MDLabel:
+            text: "Type"
+        MDDropDownItem:
+            id: type_dropdown
+            # pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            text: "one"
+            # dropdown_bg: [1, 1, 1, 1]
+            on_release: root.handle_button_click()
+
+    MDRectangleFlatButton:
+        text: "Hello, World"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        on_release: root.handle_button_click()

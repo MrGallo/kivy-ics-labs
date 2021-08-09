@@ -1,0 +1,21 @@
+MDBoxLayout:
+    orientation: "vertical"
+    MDToolbar:
+        title: "Name and Age App"
+    MDBoxLayout:
+        padding: "30dp", "30dp", "30dp", "30dp"
+        MDBoxLayout:
+            orientation: "vertical"
+            spacing: "20dp"
+            size_hint_y: None
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            MDTextField:
+                id: name
+                hint_text: "Your Name"
+            MDTextField:
+                id: age
+                hint_text: "Your Age"
+            MDRaisedButton:
+                text: "Submit"
+                pos_hint: {"center_x": 0.5}
+                on_release: app.show_alert_dialog(name.text, age.text)
